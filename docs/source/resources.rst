@@ -1,4 +1,4 @@
-Usage
+Resources
 =====
 
 .. _installation:
