@@ -16,5 +16,8 @@ Contents
 
 .. toctree::
 
-   usage
+   resources
+   tutorial
+   examples
+   flowchart
    api
