@@ -1,39 +1,23 @@
 Resources
-=====
+====
 
-.. _installation:
+Python bytecode
+----
+https://opensource.com/article/18/4/introduction-python-bytecode
 
-Installation
-------------
+The Python Interepreter
+----
+https://devguide.python.org/internals/interpreter/
 
-To use Lumache, first install it using pip:
+The dis module
+----
+https://docs.python.org/3/library/dis.html
 
-.. code-block:: console
+Reverse engineering
+----
+https://www.geeksforgeeks.org/software-engineering-reverse-engineering/#
 
-   (.venv) $ pip install lumache
-
-Creating recipes
-----------------
-
-To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
-
-.. autofunction:: lumache.get_random_ingredients
-
-The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
-or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
-will raise an exception.
-
-.. autoexception:: lumache.InvalidKindError
-
-For example:
-
->>> import lumache
->>> lumache.get_random_ingredients()
-['shells', 'gorgonzola', 'parsley']
-
-Doing something
----------------
-
-To do something do, this
+Decompilation
+----
+https://www.techtarget.com/whatis/definition/decompile
 
