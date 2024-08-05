@@ -11,7 +11,6 @@ Relevant Bytecode Difference
 Patched Output:
 .. image:: trysuc.png
 
-How to fix:
 
 
 
