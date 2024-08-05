@@ -1,37 +1,40 @@
-Examples
-========
+.. dropdown:: Try-Except
 
-Try-Except
-----------
+   .. contents::
+      :depth: 2
+      :local:
 
-Produced Code
-+++++++++++++
+   Examples
+   ========
 
-.. image:: try.png
+   Try-Except
+   ----------
 
-Relevant Bytecode Difference
-++++++++++++++++++++++++++++
+   Produced Code
+   +++++++++++++
 
-.. image:: bytecodep1.png
-.. image:: bytecodep2.png
+   .. image:: try.png
 
-How to fix
-++++++++++
+   Relevant Bytecode Difference
+   ++++++++++++++++++++++++++++
 
-The first and most important thing to notice is the different jump targets for JUMP_FORWARD, JUMP_IF_NOT_EXC_MATCH, and SETUP_FINALLY in the bytecode. JUMP_FORWARD skips over remaining except blocks to continue execution after handling an exception. JUMP_IF_NOT_EXC_MATCH checks if the current exception matches a specific type and jumps if it doesn't, ensuring proper exception handling flow. SETUP_FINALLY sets up a finally block to guarantee cleanup code runs, regardless of how the try block exits. The produced output jumps to the end of the function(offset 300), when it should be jumping to the statement at offset 266/268 that being:
+   .. image:: bytecodep1.png
+   .. image:: bytecodep2.png
 
-logger.warning('500 Internal Server Error: Additional output above') 
+   How to fix
+   ++++++++++
 
-and then just continue executing the next line:
+   The first and most important thing to notice is the different jump targets for JUMP_FORWARD, JUMP_IF_NOT_EXC_MATCH, and SETUP_FINALLY in the bytecode. JUMP_FORWARD skips over remaining except blocks to continue execution after handling an exception. JUMP_IF_NOT_EXC_MATCH checks if the current exception matches a specific type and jumps if it doesn't, ensuring proper exception handling flow. SETUP_FINALLY sets up a finally block to guarantee cleanup code runs, regardless of how the try block exits. The produced output jumps to the end of the function(offset 300), when it should be jumping to the statement at offset 266/268 that being:
 
-return Response(ResponseData(status=ResponseStatus.ERROR.name), status_code=HTTP_500_INTERNAL_SERVER_ERROR)
+   logger.warning('500 Internal Server Error: Additional output above') 
 
-resulting in a succesful patch.
+   and then just continue executing the next line:
 
+   return Response(ResponseData(status=ResponseStatus.ERROR.name), status_code=HTTP_500_INTERNAL_SERVER_ERROR)
 
-Patched Output
-++++++++++++++
+   resulting in a successful patch.
 
-.. image:: trysuc.png
+   Patched Output
+   ++++++++++++++
 
-
+   .. image:: trysuc.png
