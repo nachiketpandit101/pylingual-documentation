@@ -12,7 +12,7 @@ Patched Output:
 .. image:: trysuc.png
 
 How to fix:
-----
+
 
 
 
