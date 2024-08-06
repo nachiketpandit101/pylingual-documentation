@@ -4,13 +4,13 @@ Try-Except
 Produced Code
 -------------
 
-.. image:: try.png
+.. image:: images/try.png
 
 Relevant Bytecode Difference
 ----------------------------
 
-.. image:: bytecodep1.png
-.. image:: bytecodep2.png
+.. image:: images/bytecodep1.png
+.. image:: images/bytecodep2.png
 
 How to fix
 ----------
@@ -28,4 +28,4 @@ resulting in a succesful patch.
 Patched Output
 --------------
 
-.. image:: trysuc.png
+.. image:: images/trysuc.png
