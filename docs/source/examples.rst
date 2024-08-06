@@ -4,7 +4,8 @@ Try-Except
 Examples
 ---------
 
-**Try-Except**
+Try-Except
+
 
 Produced Code
 ++++++++++++++
