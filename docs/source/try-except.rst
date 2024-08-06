@@ -1,7 +1,7 @@
 Try-Except
 ==========
 
-Orignal Decompiled Code
+Original Decompiled Code
 -----------------------
 
 .. image:: images/try-except/try.png
