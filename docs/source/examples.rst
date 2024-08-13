@@ -15,7 +15,7 @@ Semantic Errors (Different Bytecode)
    :maxdepth: 1
 
    incorrect-boolean
-   incomplete-statement
+   incorrect-statement
 
 Semantic Errors (Different Control Flow)
 ---------------------------------------
