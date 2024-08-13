@@ -4,27 +4,24 @@ If Segmentation Issue
 Original Decompiled Code
 -----------------------
 
-.. image:: images/if-segmentation
+.. image:: images/if-segmentation/segOriginal.png
 
 Relevant Bytecode Difference
 ----------------------------
 
-.. image:: images/if-segmentation
+.. image:: images/if-segmentation/segBytecodeDiff.png
 
 How to fix
 ----------
 
-The first and most important thing to notice is the different jump targets for JUMP_FORWARD, JUMP_IF_NOT_EXC_MATCH, and SETUP_FINALLY in the bytecode. JUMP_FORWARD skips over remaining except blocks to continue execution after handling an exception. JUMP_IF_NOT_EXC_MATCH checks if the current exception matches a specific type and jumps if it doesn't, ensuring proper exception handling flow. SETUP_FINALLY sets up a finally block to guarantee cleanup code runs, regardless of how the try block exits. The produced output jumps to the end of the function(offset 300), when it should be jumping to the statement at offset 266/268 while breaking out of the try-except block, that being:
+The key issue in this case is how the decompiler handled the condition in the original code. It incorrectly combines two conditions using an or operator.
 
-logger.warning('500 Internal Server Error: Additional output above')
+The critical detail is how the bytecode handles the jump targets after evaluating this condition. The POP_JUMP_IF_FALSE instruction checks if button is false or if pattern[y].index is not None. 
+If either condition is true, the program jumps to the block where the button's identifier and channel are set. However, this logic can cause incorrect behavior when button is false.
 
-and then executing the next line
-
-return Response(ResponseData(status=ResponseStatus.ERROR.name), status_code=HTTP_500_INTERNAL_SERVER_ERROR)
-
-resulting in a succesful patch.
+The bytecode difference reveals that the button condition should be in its own if block, with the next if condition nested inside it. The else block should only correspond to this inner condition.
 
 Patched Output
 --------------
 
-.. image:: images/if-segmentation
+.. image:: images/if-segmentation/segPatch.png
