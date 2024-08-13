@@ -22,4 +22,3 @@ Contents
    examples
    flowchart
    api
-   another
