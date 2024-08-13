@@ -4,7 +4,7 @@ Examples
 Compilation and Syntax Errors
 -----------------------------
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    decorators
    parentheses
@@ -12,15 +12,15 @@ Compilation and Syntax Errors
 Semantic Errors (Different Bytecode)
 -----------------------------------
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    incorrect-boolean
 
 Semantic Errors (Different Control Flow)
 ---------------------------------------
 .. toctree::
-   :maxdepth: 2
-   
+   :maxdepth: 1
+
    try-except
 
 
