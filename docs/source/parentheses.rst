@@ -1,10 +1,10 @@
-Decorators
+Mismatched Parentheses
 ==========
 
 Original Decompiled Code
 -----------------------
 
-.. image:: images/parenthesis/parenthesisOrignal
+.. image:: images/parenthesis/parenthesisOrignal.png
 
 How to fix
 ----------
