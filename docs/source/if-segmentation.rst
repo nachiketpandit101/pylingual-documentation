@@ -1,15 +1,15 @@
-Incorrect Boolean Expression
-============================
+If Segmentation Issue
+=====================
 
 Original Decompiled Code
 -----------------------
 
-.. image:: images/incorrect-boolean
+.. image:: images/if-segmentation
 
 Relevant Bytecode Difference
 ----------------------------
 
-.. image:: images/incorrect-boolean
+.. image:: images/if-segmentation
 
 How to fix
 ----------
@@ -27,4 +27,4 @@ resulting in a succesful patch.
 Patched Output
 --------------
 
-.. image:: images/incorrect-boolean
+.. image:: images/if-segmentation

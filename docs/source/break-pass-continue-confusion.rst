@@ -1,15 +1,15 @@
-Incorrect Boolean Expression
-============================
+Break/Pass/Continue Confusion
+=============================
 
 Original Decompiled Code
 -----------------------
 
-.. image:: images/incorrect-boolean
+.. image:: images/break-continue-confusion
 
 Relevant Bytecode Difference
 ----------------------------
 
-.. image:: images/incorrect-boolean
+.. image:: images/break-continue-confusion
 
 How to fix
 ----------
@@ -27,4 +27,4 @@ resulting in a succesful patch.
 Patched Output
 --------------
 
-.. image:: images/incorrect-boolean
+.. image:: images/break-continue-confusion

@@ -1,15 +1,15 @@
-Incorrect Boolean Expression
-============================
+Incomplete Statement
+====================
 
 Original Decompiled Code
 -----------------------
 
-.. image:: images/incorrect-boolean
+.. image:: images/incomplete-statement
 
 Relevant Bytecode Difference
 ----------------------------
 
-.. image:: images/incorrect-boolean
+.. image:: images/incomplete-statement
 
 How to fix
 ----------
@@ -27,4 +27,4 @@ resulting in a succesful patch.
 Patched Output
 --------------
 
-.. image:: images/incorrect-boolean
+.. image:: images/incomplete-statement
