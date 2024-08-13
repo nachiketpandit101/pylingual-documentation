@@ -15,9 +15,10 @@ Contents
 --------
 
 .. toctree::
+   :maxdepth: 2
 
    resources
    tutorial
-   examples
    flowchart
-   api
+   examples
+
