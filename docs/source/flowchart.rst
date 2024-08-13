@@ -13,8 +13,6 @@ for code object in errors:
 
       check for wrong indentation
 
-      chat GPT is good at fixing syntax errors
-
    elif code object is different bytecode:
       check for long dictionary
 
@@ -22,7 +20,7 @@ for code object in errors:
 
       function call order mismatch
 
-      incomplete staement
+      incorrect statement
 
    elif code object is control flow:
       case loop:
