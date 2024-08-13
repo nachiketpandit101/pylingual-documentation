@@ -9,7 +9,7 @@ Original Decompiled Code
 How to fix
 ----------
 
-When dealing with long statements or large dictionaries, the Python decompiler model might leave some parentheses, brackets, or curly braces unclosed. 
+When dealing with long statements, commonly with large dictionaries, the Python decompiler model might leave some parentheses, brackets, or curly braces unclosed. 
 There might even be some non python elements at the end, like <mask334>.
 
 The best approach in these cases is to manually close any unclosed parentheses, brackets, or braces. 
