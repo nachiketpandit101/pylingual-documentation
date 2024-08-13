@@ -4,19 +4,23 @@ Examples
 Compilation and Syntax Errors
 -----------------------------
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
+
    decorators
    parentheses
 
-Semantic Errors(Different Bytecode)
+Semantic Errors (Different Bytecode)
 -----------------------------------
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
+
    incorrect-boolean
 
-Semantic Errors(Different Control Flow)
+Semantic Errors (Different Control Flow)
 ---------------------------------------
 .. toctree::
+   :maxdepth: 2
+   
    try-except
 
 
