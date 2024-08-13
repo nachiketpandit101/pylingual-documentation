@@ -4,7 +4,7 @@ Decorators
 Original Decompiled Code
 -----------------------
 
-.. image:: images/decorators/decoratorOrignal
+.. image:: images/decorators/decoratorOrignal.png
 
 How to fix
 ----------
