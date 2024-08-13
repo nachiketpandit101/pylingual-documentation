@@ -4,27 +4,24 @@ Break/Pass/Continue Confusion
 Original Decompiled Code
 -----------------------
 
-.. image:: images/break-continue-confusion
+.. image:: images/break-continue-confusion/passConfusionOriginal.png
 
 Relevant Bytecode Difference
 ----------------------------
 
-.. image:: images/break-continue-confusion
+.. image:: images/break-continue-confusion/passBytecodeDiff.png
 
 How to fix
 ----------
 
-The first and most important thing to notice is the different jump targets for JUMP_FORWARD, JUMP_IF_NOT_EXC_MATCH, and SETUP_FINALLY in the bytecode. JUMP_FORWARD skips over remaining except blocks to continue execution after handling an exception. JUMP_IF_NOT_EXC_MATCH checks if the current exception matches a specific type and jumps if it doesn't, ensuring proper exception handling flow. SETUP_FINALLY sets up a finally block to guarantee cleanup code runs, regardless of how the try block exits. The produced output jumps to the end of the function(offset 300), when it should be jumping to the statement at offset 266/268 while breaking out of the try-except block, that being:
+In this case, a break statement was incorrectly translated as a pass. When examining the bytecode difference, the issue becomes evident at the line following the if statement:
 
-logger.warning('500 Internal Server Error: Additional output above')
+if user_choice.lower() == '& C:/Users/Admin/AppData/Local/Programs/Python/Python312/python.exe "c:/Users/Admin/Desktop/Folder of ALL!!!/Python coding stuff/cointoss.py"':
 
-and then executing the next line
-
-return Response(ResponseData(status=ResponseStatus.ERROR.name), status_code=HTTP_500_INTERNAL_SERVER_ERROR)
-
-resulting in a succesful patch.
+Since the entire program is inside a while True loop, the RETURN_CONST 1 (None) indicates that we should be exiting the loop—and thus the program—if the condition is met.
+ Otherwise, the execution should jump to the offset after this line.
 
 Patched Output
 --------------
 
-.. image:: images/break-continue-confusion
+.. image:: images/break-continue-confusion/passPatch.png
