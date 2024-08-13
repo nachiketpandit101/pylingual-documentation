@@ -4,12 +4,12 @@ Incorrect Statement
 Original Decompiled Code
 -----------------------
 
-.. image:: images/incomplete-statement/incorrectStatementOriginal.png
+.. image:: images/incorrect-statement/incorrectStatementOriginal.png
 
 Relevant Bytecode Difference
 ----------------------------
 
-.. image:: images/incomplete-statement/incorrectStatementBytecodeDiff.png
+.. image:: images/incorrect-statement/incorrectStatementBytecodeDiff.png
 
 How to fix
 ----------
@@ -23,4 +23,4 @@ However, the correct behavior should be to combine all three values into the str
 Patched Output
 --------------
 
-.. image:: images/incomplete-statement/incorrectStatementPatch.png
+.. image:: images/incorrect-statement/incorrectStatementPatch.png
