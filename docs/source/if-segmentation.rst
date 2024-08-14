@@ -14,12 +14,11 @@ Relevant Bytecode Difference
 How to fix
 ----------
 
-The key issue in this case is how the decompiler handled the condition in the original code. It incorrectly combines two conditions using an or operator.
+The issue lies in the jump target for POP_JUMP_IF_FALSE when checking the button condition. In the provided .pyc file, if the condition is false, the code correctly jumps back to the start of the for x, ... loop. However, in the decompiled code, it incorrectly jumps to the lines where the button's identifier and channel are set.
 
-The critical detail is how the bytecode handles the jump targets after evaluating this condition. The POP_JUMP_IF_FALSE instruction checks if button is false or if pattern[y].index is not None. 
-If either condition is true, the program jumps to the block where the button's identifier and channel are set. However, this logic can cause incorrect behavior when button is false.
+The .pyc bytecode indicates that the button condition should be its own if statement, with the following if condition nested inside it.
 
-The bytecode difference reveals that the button condition should be in its own if block, with the next if condition nested inside it. The else block should only correspond to this inner condition.
+The bytecode difference shows that the button condition needs to be in its own if block, with the next if condition nested within it. The else block should correspond only to this inner condition.
 
 Patched Output
 --------------
