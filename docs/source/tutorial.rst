@@ -11,8 +11,9 @@ It’s possible that there are only semantic errors from the start, in which cas
 Compilation and Syntax Errors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Common Compilation and Syntax errors
+Common Compilation and Syntax Errors
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 - Missing or extra parentheses
 
 - Decorator applied to a non-function (remove the decorator)
@@ -23,6 +24,7 @@ Common Compilation and Syntax errors
 
 Tips and How to Approach
 ^^^^^^^^^^^^^^^^^^^^^^^^
+
 - Identify the line where the error occurs by clicking the dropdown and checking if anything fails to follow Python syntax rules. The error might be 1 or 2 lines above or below the flagged line.
 
 - Close any unclosed parentheses, brackets, etc.
@@ -80,16 +82,17 @@ Missing Bytecode
 Control Flow Errors
 ~~~~~~~~~~~~~~~~~~~
 
-
 Control flow errors occur when jump targets from control structures like `if-else` statements, loops, `try-except` blocks, function returns, or misplaced lines do not match between the model-generated and original bytecode.
 
 Disclaimers  
-^^^^^^^^^^^  
+^^^^^^^^^^^
+
 - Different control flow structures may exist across Python versions.  
 - Jump targets are bytecode offsets, shown as numbers in parentheses indicating the destination. Occasionally, you'll encounter a large jump target number that seems out of range.
 
 General Tips and How to Approach  
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^  
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 - A small delta (1 to 10) in jump target differences is usually acceptable and often stems from missing bytecode or incorrect lines.  
 - Be aware of the following control flow interpretation issues:  
   - `if` statements might be incorrectly interpreted as `while` loops, especially if there's a `break` or `continue` inside the `if` block.  
@@ -98,7 +101,8 @@ General Tips and How to Approach
   - The model might struggle with `pass`, `continue`, or `break` statements.
 
 Main Objective  
-^^^^^^^^^^^^^^  
+^^^^^^^^^^^^^^
+
 - Match the jump targets between the bytecode and the original code.  
 - Look for significant deltas between jump targets, and use constants near the control flow statements to find the source code line causing the issue.  
 - Ensure the entry and exit points of control flow blocks align. Common markers like `jump absolute` or `jump backwards` often indicate loop boundaries, while mistranslations of `break`, `continue`, or `return` statements can disrupt control flow.
