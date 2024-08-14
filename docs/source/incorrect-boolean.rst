@@ -4,27 +4,23 @@ Incorrect Boolean Expression
 Original Decompiled Code
 -----------------------
 
-.. image:: images/incorrect-boolean
+.. image:: images/incorrect-boolean/boolOriginal.png
 
 Relevant Bytecode Difference
 ----------------------------
 
-.. image:: images/incorrect-boolean
+.. image:: images/incorrect-boolean/boolBytecode1.png
+.. image:: images/incorrect-boolean/boolBytecode2.png
+
 
 How to fix
 ----------
 
-The first and most important thing to notice is the different jump targets for JUMP_FORWARD, JUMP_IF_NOT_EXC_MATCH, and SETUP_FINALLY in the bytecode. JUMP_FORWARD skips over remaining except blocks to continue execution after handling an exception. JUMP_IF_NOT_EXC_MATCH checks if the current exception matches a specific type and jumps if it doesn't, ensuring proper exception handling flow. SETUP_FINALLY sets up a finally block to guarantee cleanup code runs, regardless of how the try block exits. The produced output jumps to the end of the function(offset 300), when it should be jumping to the statement at offset 266/268 while breaking out of the try-except block, that being:
-
-logger.warning('500 Internal Server Error: Additional output above')
-
-and then executing the next line
-
-return Response(ResponseData(status=ResponseStatus.ERROR.name), status_code=HTTP_500_INTERNAL_SERVER_ERROR)
-
-resulting in a succesful patch.
+The bytecode from the original decompiled code mishandles the boolean condition by trying to implement a ternary operator (if d in delims.keys() else None), leading to unnecessary jumps (JUMP_FORWARD) and 
+incorrect assignments of None to skipinitialspace. This disrupts the flow, causing premature returns or skipped logic, whereas the patched code uses a proper if statement with POP_JUMP_IF_FALSE 
+to ensure the conditional block is only executed when the condition(d in delims.keys():) is true.
 
 Patched Output
 --------------
 
-.. image:: images/incorrect-boolean
+.. image:: images/incorrect-boolean/boolPatch.png
