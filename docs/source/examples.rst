@@ -11,7 +11,6 @@ Compilation and Syntax Errors
    :maxdepth: 1
 
    examples/decorators
-   examples/incomplete-dictionary
    examples/parentheses
    examples/indentation
 
@@ -31,6 +30,7 @@ Semantic Errors (Different Control Flow)
    :maxdepth: 1
 
    examples/if-while-confusion
+   examples/if-elif-confusion
    examples/break-pass-continue-confusion
    examples/hallucinated-while
    examples/if-segmentation
