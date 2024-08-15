@@ -1,6 +1,10 @@
 Examples
 ========
 
+Here are some common examples of the Pylingual patching process that may help with patching a file.
+Heads up, in the Relevant Bytecode Difference, the left side is the uploaded pyc bytecode, and the
+right side is the bytecode producded by the original decompiled code.
+
 Compilation and Syntax Errors
 -----------------------------
 .. toctree::
