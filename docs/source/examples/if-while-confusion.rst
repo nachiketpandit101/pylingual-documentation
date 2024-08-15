@@ -4,12 +4,12 @@ If While Confusion
 Original Decompiled Code
 -----------------------
 
-.. image:: images/if-while-confusion/IfWhileOriginal.PNG
+.. image:: images/if-while/IfWhileOriginal.PNG
 
 Relevant Bytecode Difference
 ----------------------------
 
-.. image:: images/if-while-confusion/IfWhileBytecode.PNG
+.. image:: images/if-while/IfWhileBytecode.PNG
 
 How to fix
 ----------
@@ -21,4 +21,4 @@ Due to above mentioned fact and how common this issue pops up, I suggest that wh
 Patched Output
 --------------
 
-.. image:: images/if-while-confusion/IfWhilePatch.PNG
+.. image:: images/if-while/IfWhilePatch.PNG
