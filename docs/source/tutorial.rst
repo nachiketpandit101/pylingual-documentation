@@ -94,8 +94,9 @@ General Tips and How to Approach
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - A small delta (1 to 10) in jump target differences is usually acceptable and often stems from missing bytecode or incorrect lines.  
-- Be aware of the following control flow interpretation issues:  
-  - `if` statements might be incorrectly interpreted as `while` loops, especially if there's a `break` or `continue` inside the `if` block.  
+- Be aware of the following control flow interpretation issues:
+
+  - `if` statements might be incorrectly interpreted as `while` loops, especially if there's a `break` or `continue` inside the `if` block. 
   - Nested `if` statements and `else` blocks may need to be merged.  
   - Consecutive `if` statements might need to be converted into `elif` statements.  
   - The model might struggle with `pass`, `continue`, or `break` statements.

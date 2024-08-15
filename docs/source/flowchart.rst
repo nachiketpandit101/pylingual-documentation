@@ -1,8 +1,6 @@
-Flowchart
-====
+Patching Algorithm
+==================
 
-Patching Algorithm:
--------------------
 for code object in errors:
    if code object is compilation/syntax:
       check for decorators above non-function statements
