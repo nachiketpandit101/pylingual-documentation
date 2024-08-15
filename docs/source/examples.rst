@@ -20,7 +20,7 @@ Semantic Errors (Different Bytecode)
 .. toctree::
    :maxdepth: 1
 
-   examples/longDictionary
+   examples/long-dictionary
    examples/incorrect-boolean
    examples/function-call-mismatch
    examples/incorrect-statement
